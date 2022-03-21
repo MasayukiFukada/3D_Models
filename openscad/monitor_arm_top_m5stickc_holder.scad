@@ -1,0 +1,58 @@
+union(){
+    difference(){
+        union(){
+            // 腕のベース部分
+            color([0,0.5,0])
+            linear_extrude(5){
+                circle(25);
+                translate([60,0,0]){
+                    circle(15);
+                }
+                polygon([[0,25],[0,-25],[60,-15],[60,15]]);
+            }
+            // 接続部分の飛び出た輪
+            color([0.8,0,0])
+            translate([0,0,5]){
+                linear_extrude(2.5){
+                    difference() {
+                        circle(20);
+                        circle(17);
+                    }
+                }
+            }
+        }
+        // 磁石( 約 6 mm )
+        linear_extrude(4){
+            circle(3.2);
+        }
+        // 磁石穴の余分な空き
+        linear_extrude(3){
+            circle(7);
+        }
+        // M5StickC の穴
+        union(){
+            translate([40,-7.5,0]){
+                linear_extrude(4){
+                    square([25,15]);
+                }
+            }
+            translate([48,3.3,4]){
+                linear_extrude(1){
+                    square([9,3]);
+                }
+            }
+        }
+    }
+    // M5StickCを支える枠
+    color([0,0,0.5])
+    translate([38.5,-9,-2.5]){
+        linear_extrude(2.5){
+            difference(){
+                square([28,18]);
+                translate([1.5,1.5,0]){
+                    square([25,15]);
+                }
+            }
+        }
+    }
+}
