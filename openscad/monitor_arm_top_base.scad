@@ -52,7 +52,7 @@ difference() {
             // 磁石(13mm)穴
             color([0,0.8,0])
             linear_extrude(10){
-                circle(6.5);
+                circle(6.6);
             }
         }
     }    
