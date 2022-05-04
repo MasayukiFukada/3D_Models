@@ -12,14 +12,14 @@ color ([1.0,0,0,0.5])difference() {
     }
     // 中の空洞
     translate([0,1,-1]) linear_extrude(12.5)  {
-        square([23.5,68],center=true);
-        circle(21,$fn=100);
+        square([23.2,68],center=true);
+        
     }
     // 穴
     translate([0,0,-3]) linear_extrude(20) {
         hull(){
-            translate([0,30,0]) circle(2,$fn=100);
-            translate([0,12,0]) circle(2,$fn=100);
+            translate([0,30,0]) circle(3.5,$fn=100);
+            translate([0,12,0]) circle(3.5,$fn=100);
         }
     }
     // 上カバーの欠け
