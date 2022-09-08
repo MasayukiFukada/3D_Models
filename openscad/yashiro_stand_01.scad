@@ -1,9 +1,9 @@
 difference() {
     union() {
-        translate([-2.5,0,7]) rotate([-90,0,0]) cylinder(90,7,7,$fn=100);
-        translate([72.5,0,7]) rotate([-90,0,0]) cylinder(90,7,7,$fn=100);
-        translate([-2.5,0,7]) rotate([-90,0,0]) cylinder(10,8.5,8.5,$fn=6);
-        translate([72.5,0,7]) rotate([-90,0,0]) cylinder(10,8.5,8.5,$fn=6);
+        translate([-1,0,7]) rotate([-90,0,0]) cylinder(90,7,7,$fn=100);
+        translate([70.5,0,7]) rotate([-90,0,0]) cylinder(90,7,7,$fn=100);
+        translate([-1.5,0,7]) rotate([-90,0,0]) cylinder(10,8.5,8.5,$fn=6);
+        translate([70.5,0,7]) rotate([-90,0,0]) cylinder(10,8.5,8.5,$fn=6);
         // 上の横梁
         translate([-22,95,-1]) linear_extrude(16) polygon([[0,0],[-2,8],[118,8],[116,0]]);
         translate([-18,90,0]) linear_extrude(14) polygon([[0,0],[-2,5],[110,5],[108,0]]);
@@ -11,7 +11,7 @@ difference() {
         translate([30,78,4.5]) linear_extrude(4) square([10,13.5]);
         // 下の横梁
         translate([-18,70,4.5]) linear_extrude(4) square([107,8]);
-        color("blue") translate([0,70,0]) linear_extrude(13) square([70,1]);
+        color("blue") translate([0,68,1]) linear_extrude(13) square([70,3]);
         // 下の石垣
         color("red") translate([-13,-12,-3]) linear_extrude(20) square([96,12]);
         // 背中側
@@ -21,7 +21,7 @@ difference() {
     color("lightgreen") union() {
         translate([0,0,-5]) linear_extrude(18) square([70,70]);
         translate([0,-10,-5]) linear_extrude(17) square([90,8]);
-        translate([0,-5,0]) linear_extrude(12) square([3,10]);
+        translate([0,-5,-8]) linear_extrude(20) square([5,10]);
     }
     // 磁石穴
     union() {
