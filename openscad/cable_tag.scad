@@ -4,12 +4,12 @@
 difference() { union() {
         // 連結部分     
         linear_extrude(2) union() {
-            translate([-34,-85,0]) square([4,90]);
-            translate([-30,-1.5,0]) square([3,2]);
-            translate([-30,-21.5,0]) square([3,2]);
-            translate([-30,-41.5,0]) square([3,2]);
-            translate([-30,-61.5,0]) square([3,2]);
-            translate([-30,-81.5,0]) square([3,2]);
+            translate([-37,-85,0]) square([4,90]);
+            translate([-33,-1.5,0]) square([6,2]);
+            translate([-33,-21.5,0]) square([6,2]);
+            translate([-33,-41.5,0]) square([6,2]);
+            translate([-33,-61.5,0]) square([6,2]);
+            translate([-33,-81.5,0]) square([6,2]);
         }
         // タグ
         difference() {
@@ -90,9 +90,9 @@ difference() { union() {
         }
     }
     // 一筆書き仕掛け
-    linear_extrude(3) translate([-35,-0.5,0]) square([10,0.1]);
-    linear_extrude(3) translate([-35,-20.5,0]) square([10,0.1]);
-    linear_extrude(3) translate([-35,-40.5,0]) square([10,0.1]);
-    linear_extrude(3) translate([-35,-60.5,0]) square([10,0.1]);
-    linear_extrude(3) translate([-35,-80.5,0]) square([10,0.1]);
+    linear_extrude(3) translate([-38,-0.5,0]) square([13,0.1]);
+    linear_extrude(3) translate([-38,-20.5,0]) square([13,0.1]);
+    linear_extrude(3) translate([-38,-40.5,0]) square([13,0.1]);
+    linear_extrude(3) translate([-38,-60.5,0]) square([13,0.1]);
+    linear_extrude(3) translate([-38,-80.5,0]) square([13,0.1]);
 }
