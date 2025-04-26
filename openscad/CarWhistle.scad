@@ -7,149 +7,121 @@
 - ストームホイッスル気になる
 - 雨水溜まっても水笛の構造には近づかない気がする( 要検証 )
 */
+
 difference() {
-    // 外形
     color("Salmon")
     union() {
-        difference() {
-            translate([17, -12, 0])
-            rotate([0, 180, 0])
-            rotate([-90, 0, 0])
-            linear_extrude(60) // 52
-                hull() {
-                    translate([0,  -1, 0]) circle(1, $fn=50);
-                    translate([33, -1, 0]) circle(1, $fn=50);
-                    translate([28,  11, 0]) circle(1, $fn=50);
-                    translate([ 5,  11, 0]) circle(1, $fn=50);
-                }
-
-            // 窓
-            union() {
-                translate([2, 16, 10])
-                    linear_extrude(5)
-                    square([8, 10]);
-
-                translate([-9, 16, 10])
-                    linear_extrude(5)
-                    square([8, 10]);
-            }
-        }
-
-        // 音鳴らす突起
-        translate([11, 14, 11.5])
-        rotate([0, -90, 0])
-        linear_extrude(21)
-            hull() {
-                translate([0  , -1, 0]) circle(1, $fn=50);
-                translate([0.5,  0, 0]) circle(1, $fn=50);
-                translate([0  , 5, 0]) circle(1, $fn=50);
-            }
-
-        // 前方突起
-        translate([11, 42, 11.5])
-        rotate([0, -90, 0])
-        linear_extrude(21)
-            hull() {
-                translate([0  , -3, 0]) circle(1, $fn=50);
-                translate([1,  0, 0]) circle(1, $fn=50);
-                translate([0  , 5, 0]) circle(1, $fn=50);
-            }
-    }
-
-    // 内部の空洞
-    color("aquamarine")
-    union() {
-        rotate([0, -90, 0])
-        linear_extrude(10)
-            hull() {
-                circle(1, $fn=50);
-                translate([10,  0, 0]) circle(1, $fn=50);
-                translate([10, 25, 0]) circle(1, $fn=50);
-                translate([ 0, 15, 0]) circle(1, $fn=50);
-            }
-
-        translate([0, 25, 9])
-        rotate([0, -90, 0])    
-        linear_extrude(10)
-            square([2,15]);
-
-        translate([11, 0, 0])
-        rotate([0, -90, 0])
-        linear_extrude(10)
-            hull() {
-                translate([0, -10, 0]) circle(1, $fn=50);
-                translate([10,-10, 0]) circle(1, $fn=50);
-                translate([10, 25, 0]) circle(1, $fn=50);
-                translate([ 0, 15, 0]) circle(1, $fn=50);
-            }
-
-        translate([11, 25, 9])
-        rotate([0, -90, 0])    
-        linear_extrude(10)
-            square([2,15]);
-    }
-
-    // 窓1
-    color("DarkGreen")
-    translate([0,1,9])
-    rotate([-20, 0, 0])
-    union() {
-        translate([2, 16, 10])
-            linear_extrude(1)
-            square([8, 10]);
-
-        translate([-9, 16, 10])
-            linear_extrude(1)
-            square([8, 10]);
-    }
-
-    // 窓2
-    #color("Lime")
-    translate([0,-5, 14.3])
-    rotate([-30, 0, 0])
-    union() {
-        translate([2, 16, 10])
-            linear_extrude(1.5)
-            square([8, 10]);
-
-        translate([-9, 16, 10])
-            linear_extrude(1.5)
-            square([8, 10]);
-    }
-
-    // 窓下側
-    color("Violet")
-    union() {
-        translate([2, 10, 10])
-            linear_extrude(1)
-            square([8, 20]);
-
-        translate([-9, 10, 10])
-            linear_extrude(1)
-            square([8, 20]);
-    }
-
-    // 吹き込み口
-    #
-    translate([20, 38, 3])
-    difference() {
-        rotate([0, -90, 0])
-        linear_extrude(40)
+        translate([0,0,-2])
+        linear_extrude(14)
         hull() {
-            translate([-1, 10, 0]) circle(3, $fn=50);
-            translate([2, 2, 0]) circle(1, $fn=50);
-            translate([6.5, 0, 0]) circle(1, $fn=50);
-            translate([3, 10, 0]) circle(3, $fn=50);
+                translate([-2, -2, 0]) circle(2,$fn=50);
+                translate([27, -2, 0]) circle(2,$fn=50);
+                translate([27, 44, 0]) square([2,2]);
+                translate([-4, 44, 0]) square([2,2]);
         }
-
-        translate([-1.5, -5, -8])
-        rotate([0, -23, 0])
-        linear_extrude(20)
-        square([10, 20]);
-
-        translate([-46.5, -5, -3])
-        rotate([0, 23, 0])
-        linear_extrude(20)
-        square([10, 20]);
+        translate([0,46,-2])
+        linear_extrude(12)
+        hull() {
+            translate([2,0,0]) circle(1, $fn=50);
+            translate([24,0,0]) circle(1, $fn=50);
+            translate([13,3,0]) circle(1, $fn=50);
+        }
+        translate([-3,46,-2])
+        linear_extrude(12)
+        hull() {
+            translate([0,0,0]) circle(1, $fn=50);
+            translate([2,0,0]) circle(1, $fn=50);
+            translate([0,3,0]) circle(1, $fn=50);
+        }
+        translate([27,46,-2])
+        linear_extrude(12)
+        hull() {
+            translate([0,0,0]) circle(1, $fn=50);
+            translate([1,0,0]) circle(1, $fn=50);
+            translate([1,3,0]) circle(1, $fn=50);
+        }
+        difference() {
+            translate([0,45,-2])
+            linear_extrude(14)
+            hull(){
+                translate([-4,0,0]) square([2,2]);
+                translate([27,0,0]) square([2,2]);
+                translate([27,10,0]) square([2,2]);
+                translate([-4,10,0]) square([2,2]);
+            }
+            translate([0,45,0])
+            linear_extrude(10)
+            hull(){
+                translate([-2,0,0]) square([2,2]);
+                translate([25,0,0]) square([2,2]);
+                translate([25,10,0]) square([2,2]);
+                translate([-2,10,0]) square([2,2]);
+            }
+        }
+    }
+    
+    // 空洞部
+    #color("orange")
+    union() {
+        linear_extrude(5)
+        union() {
+            hull() {
+                translate([0, 0, 0]) circle(2,$fn=50);
+                translate([10, 0, 0]) circle(1,$fn=50);
+                translate([10, 17, 0]) circle(1,$fn=50);
+                translate([0, 27, 0]) circle(2,$fn=50);
+            }
+            hull() {
+                translate([15, 1.5, 0]) circle(1,$fn=50);
+                translate([25, 1.5, 0]) circle(2,$fn=50);
+                translate([25, 27, 0]) circle(2,$fn=50);
+                translate([15, 17, 0]) circle(1,$fn=50);
+            }
+        }
+        // 細い吹き口の通路
+        translate([0,15.5,5])
+        linear_extrude(5)
+        union() {
+            square([1,25]);
+            translate([25,0,0]) square([1,25]);
+        }
+        translate([0, 35, 8])
+        rotate([0, 90, 0])
+        linear_extrude(1)
+        hull() {
+            circle(2, $fn=50);
+            translate([-2, 10, 0]) square([2, 2]);
+            translate([6, 10, 0]) square([2, 2]);
+        }
+        translate([25, 35, 8])
+        rotate([0, 90, 0])
+        linear_extrude(1)
+        hull() {
+            circle(2, $fn=50);
+            translate([-2, 10, 0]) square([2, 2]);
+            translate([6, 10, 0]) square([2, 2]);
+        }
+        // 横の空気抜け
+        translate([-4.7, 15, 5])
+        linear_extrude(8)
+        difference() {
+            square([5,10]);
+            hull() {
+                circle(0.5, $fn=50);
+                translate([4.9,0,0]) circle(0.5, $fn=50);
+                translate([4.9,5,0]) circle(0.5, $fn=50);
+            }
+        }
+        translate([30.8, 15, 5])
+        linear_extrude(8)
+        mirror()
+        difference() {
+            square([5,10]);
+            hull() {
+                circle(0.5, $fn=50);
+                translate([4.9,0,0]) circle(0.5, $fn=50);
+                translate([4.9,5,0]) circle(0.5, $fn=50);
+            }
+        }
     }
 }
